@@ -1,0 +1,412 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+body {
+  background: #020617;
+  overflow-x: hidden;
+  font-family: "Orbitron", sans-serif;
+}
+
+.app {
+  min-height: 100vh;
+  color: white;
+  position: relative;
+  overflow: hidden;
+  background:
+    radial-gradient(circle at top left, rgba(0,255,255,.15), transparent 30%),
+    radial-gradient(circle at bottom right, rgba(124,58,237,.15), transparent 30%),
+    #020617;
+}
+
+/* BACKGROUND */
+
+.grid-bg {
+  position: fixed;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(0,255,255,.06) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0,255,255,.06) 1px, transparent 1px);
+  background-size: 50px 50px;
+  z-index: -5;
+}
+
+.orb {
+  position: fixed;
+  border-radius: 50%;
+  filter: blur(120px);
+  z-index: -4;
+  animation: floatOrb 10s ease-in-out infinite;
+}
+
+.orb1 {
+  width: 300px;
+  height: 300px;
+  background: cyan;
+  top: 5%;
+  left: 5%;
+}
+
+.orb2 {
+  width: 250px;
+  height: 250px;
+  background: #7c3aed;
+  top: 50%;
+  right: 5%;
+}
+
+.orb3 {
+  width: 220px;
+  height: 220px;
+  background: #06b6d4;
+  bottom: 5%;
+  left: 40%;
+}
+
+@keyframes floatOrb {
+  0%,100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-40px);
+  }
+}
+
+.scanline {
+  position: fixed;
+  inset: 0;
+  background:
+    repeating-linear-gradient(
+      to bottom,
+      transparent,
+      transparent 2px,
+      rgba(255,255,255,.02) 3px
+    );
+  pointer-events: none;
+}
+
+/* NAVBAR */
+
+.navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  padding: 20px 60px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  backdrop-filter: blur(10px);
+  background: rgba(0,0,0,.25);
+  z-index: 100;
+}
+
+.logo {
+  color: cyan;
+  font-size: 1.8rem;
+  text-shadow: 0 0 15px cyan;
+}
+
+.nav-links {
+  display: flex;
+  gap: 30px;
+}
+
+.nav-links a {
+  color: white;
+  text-decoration: none;
+  transition: .3s;
+}
+
+.nav-links a:hover {
+  color: cyan;
+}
+
+/* HERO */
+
+.hero {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 80px;
+  padding: 120px 60px 80px;
+  flex-wrap: wrap;
+}
+
+.hero-text {
+  max-width: 550px;
+}
+
+.status {
+  color: cyan;
+  letter-spacing: 3px;
+  margin-bottom: 15px;
+}
+
+.hero-title {
+  font-size: 6rem;
+  color: cyan;
+  line-height: 1.1;
+  text-shadow: 0 0 25px cyan;
+}
+
+.hero-tagline {
+  margin-top: 15px;
+  color: #cbd5e1;
+  letter-spacing: 6px;
+  font-size: 1.3rem;
+}
+
+.hero-subtitle {
+  margin-top: 25px;
+  line-height: 1.8;
+  color: #cbd5e1;
+}
+
+.hero-image {
+  width: 340px;
+  max-width: 100%;
+  border-radius: 20px;
+  box-shadow:
+    0 0 30px rgba(0,255,255,.4),
+    0 0 80px rgba(0,255,255,.2);
+  animation: floatImage 5s ease-in-out infinite;
+}
+
+@keyframes floatImage {
+  0%,100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-15px);
+  }
+}
+
+.cyber-btn {
+  margin-top: 30px;
+  padding: 15px 35px;
+  border: none;
+  border-radius: 10px;
+  background: cyan;
+  color: black;
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: 0 0 25px cyan;
+  transition: .3s;
+}
+
+.cyber-btn:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 0 40px cyan;
+}
+
+/* FEATURES */
+
+.features {
+  padding: 100px 50px;
+}
+
+.section-title {
+  text-align: center;
+  color: cyan;
+  margin-bottom: 60px;
+  font-size: 3rem;
+  text-shadow: 0 0 15px cyan;
+}
+
+.feature-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+}
+
+.card {
+  width: 280px;
+  padding: 30px;
+  border-radius: 20px;
+  background: rgba(255,255,255,.05);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(0,255,255,.2);
+}
+
+.card h3 {
+  color: cyan;
+  margin: 15px 0;
+}
+
+.card p {
+  color: #cbd5e1;
+}
+
+/* STATS */
+
+.stats {
+  padding: 100px 40px;
+}
+
+.stats-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 70px;
+}
+
+.stat {
+  text-align: center;
+}
+
+.stat h1 {
+  color: cyan;
+  font-size: 3rem;
+}
+
+/* ABOUT */
+
+.about {
+  padding: 100px 40px;
+  text-align: center;
+}
+
+.about p {
+  max-width: 850px;
+  margin: auto;
+  line-height: 1.8;
+  color: #cbd5e1;
+}
+
+/* CTA */
+
+.cta {
+  padding: 120px 20px;
+  text-align: center;
+}
+
+/* FOOTER */
+
+.footer {
+  text-align: center;
+  padding: 30px;
+  color: #94a3b8;
+  border-top: 1px solid rgba(255,255,255,.1);
+}
+
+/* MOBILE */
+
+@media (max-width: 768px) {
+
+  .hero {
+    gap: 50px;
+    text-align: center;
+  }
+
+  .hero-title {
+    font-size: 3rem;
+  }
+
+  .hero-image {
+    width: 260px;
+  }
+
+  .nav-links {
+    display: none;
+  }
+
+  .navbar {
+    padding: 20px;
+  }
+}
+/* HOLOGRAM IMAGE */
+
+.hero-image-container {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.ring {
+  position: absolute;
+  border-radius: 50%;
+  border: 2px solid rgba(0,255,255,.35);
+}
+
+.ring1 {
+  width: 420px;
+  height: 420px;
+  animation: rotateRing 15s linear infinite;
+}
+
+.ring2 {
+  width: 520px;
+  height: 520px;
+  border-color: rgba(124,58,237,.35);
+  animation: rotateRingReverse 20s linear infinite;
+}
+
+@keyframes rotateRing {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes rotateRingReverse {
+  from {
+    transform: rotate(360deg);
+  }
+  to {
+    transform: rotate(0deg);
+  }
+}
+
+/* STATUS LIGHT */
+
+.status-dot {
+  width: 10px;
+  height: 10px;
+  background: cyan;
+  border-radius: 50%;
+  display: inline-block;
+  margin-right: 10px;
+  box-shadow: 0 0 15px cyan;
+  animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+  0% {
+    opacity: .4;
+  }
+
+  50% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: .4;
+  }
+}
+
+/* PREMIUM CARD HOVER */
+
+.card {
+  width: 280px;
+  padding: 30px;
+  border-radius: 20px;
+  background: rgba(255,255,255,.05);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(0,255,255,.2);
+  transition: all .4s ease;
+}
+
+.card:hover {
+  transform: translateY(-12px);
+  box-shadow:
+    0 0 25px rgba(0,255,255,.5),
+    0 0 60px rgba(0,255,255,.2);
+}
