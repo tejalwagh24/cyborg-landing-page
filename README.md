@@ -7,7 +7,7 @@ This project showcases a modern UI combined with a real-time **3D interactive ex
 
 ## 🚀 Live Demo
 
-🔗 https://cyborg-landing-page.vercel.app
+🔗 https://cyborg-landing-page-alpha.vercel.app
 
 ---
 
